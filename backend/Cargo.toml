@@ -1,0 +1,79 @@
+[package]
+name = "flight-plan-system-backend"
+version = "0.1.0"
+edition = "2024"
+
+
+[lib]
+name = "milp_solver"
+crate-type = ["cdylib"]
+
+[dependencies]
+
+# SeaORM ORM
+sea-orm = { version = "2.0.0-rc.36", features = ["sqlx-postgres", "runtime-tokio-native-tls", "debug-print", "default", "serde_json" ]}
+
+ts-rs = { version = "12.0.1", features = ["default", "chrono-impl",  "serde-json-impl"] }
+
+# Web框架
+actix-web = { version = "4.13.0" }
+actix-web-grants = { version = "4.1.2", features = ["default"]}
+actix-rt = { version = "2.11.0" }
+actix-cors = { version = "0.7.1" }
+actix-ws = { version = "0.4.0" }#WebSocket（审批通知用）
+
+# 认证
+jsonwebtoken = { version = "10.3.0", features = ["default","rust_crypto"] }
+bcrypt = { version = "0.19.0" }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.149" }
+
+# 时间处理
+chrono = { version = "0.4.44", features = ["serde"] }
+
+# 配置
+dotenv = { version = "0.15.0" }
+config = { version = "0.15.19" }
+
+# 日志
+tracing = { version = "0.1.44" }
+tracing-subscriber = { version = "0.3.22", features = ["env-filter",  "json"] }
+
+# 参数校验
+validator = { version = "0.20.0", features = ["derive"] }
+
+# 错误处理
+thiserror = { version = "2.0.18" }
+
+# 其他工具
+uuid = { version = "1.22.0", features = ["v4", "serde"] }
+lazy_static = { version = "1.5.0" }
+
+env_logger = { version = "0.11.9" }
+log = { version = "0.4.29" }
+serial_test = { version = "3.4.0" }
+tokio = { version = "1.50.0", features = ["full", "test-util"] }
+
+futures = { version = "0.3.32" ,features = ["default"] }
+actix-service = "2.0.3"
+hmac = { version = "0.13.0-rc.5" }
+sha2 = "0.11.0-rc.5"
+jwt = "0.16.0"
+http = "1.4.0"
+once_cell = { version = "1.21.4" }
+dotenvy = { version = "0.15.7" }
+regex = { version = "1.12.3" }
+actix = "0.13.5"
+futures-util = "0.3.32"
+aws-sdk-s3 = "1.0"
+aws-config = "1.0"
+aws-credential-types = "1.0"
+anyhow = "1"
+bytes = "0.6.0"
+actix-multipart = "0.7.2"
+minio = "0.3.0"
+pyo3 = { version = "0.20.3", features = ["auto-initialize"] }
+
+rust_decimal = "1.33"
+rust_decimal_macros = "1.33"
+
